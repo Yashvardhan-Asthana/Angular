@@ -1,0 +1,26 @@
+<div class="table-container">
+    <h2>Employee Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Employee Name</th>
+          <th>Designation</th>
+          <th>Joining Date</th>
+          <th>Installment Amount</th>
+          <th>Total Installments</th>
+          <th>Installment Period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>{{ employee.joiningDate }}</td>
+          <td>{{ employee.installmentAmount }}</td>
+          <td>{{ employee.totalInstallments }}</td>
+          <td>{{ employee.installmentPeriod }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
