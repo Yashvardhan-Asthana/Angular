@@ -1,0 +1,41 @@
+<div class="table-container">
+    <h2>Employee Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Employee Name</th>
+          <th>Designation</th>
+          <!-- <th>Joining Date</th> -->
+          <th>Installment Amount</th>
+          <th>Total Installments</th>
+          <th>Installment Period</th>
+          <!-- <th>First Installment</th>
+          <th>Second Installment</th>
+          <th>Third Installment</th>
+          <th>Fourth Installment</th>
+          <th>Fifth Installment</th>
+          <th>Sixth Installment</th>
+          <th>Seventh Installment</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.designation }}</td>
+          <!-- <td>{{ employee.joiningDate }}</td> -->
+        <td>{{ employee['installment amount'] }}</td>
+        <td>{{ employee['total installment'] }}</td>
+        <td>{{ employee['installment period'] }}</td>
+
+          <!-- <td>{{ employee.firstInstallment }}</td>
+          <td>{{ employee.secondInstallment }}</td>
+          <td>{{ employee.thirdInstallment }}</td>
+          <td>{{ employee.fourthInstallment }}</td>
+          <td>{{ employee.fifthInstallment }}</td>
+          <td>{{ employee.sixthInstallment }}</td>
+          <td>{{ employee.seventhInstallment }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

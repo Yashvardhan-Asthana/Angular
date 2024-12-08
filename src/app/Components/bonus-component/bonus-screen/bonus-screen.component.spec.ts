@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdjustedTableComponent } from './adjusted-table.component';
+import { BonusScreenComponent } from './bonus-screen.component';
 
-describe('AdjustedTableComponent', () => {
-  let component: AdjustedTableComponent;
-  let fixture: ComponentFixture<AdjustedTableComponent>;
+describe('BonusScreenComponent', () => {
+  let component: BonusScreenComponent;
+  let fixture: ComponentFixture<BonusScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AdjustedTableComponent]
+      declarations: [BonusScreenComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdjustedTableComponent);
+    fixture = TestBed.createComponent(BonusScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

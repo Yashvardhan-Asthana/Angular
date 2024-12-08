@@ -1,6 +1,9 @@
 .table-container {
     margin: 20px;
   }
+  body{
+    color:chocolate
+  }
   
   table {
     width: 100%;
@@ -13,10 +16,10 @@
   }
   
   table th {
-    background-color: #f2f2f2;
+    background-color :bisque;
   }
   
   table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color:cadetblue;
   }
   
