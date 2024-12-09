@@ -1,41 +1,53 @@
-<div class="table-container">
-    <h2>Employee Table</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Employee Name</th>
-          <th>Designation</th>
-          <!-- <th>Joining Date</th> -->
-          <th>Installment Amount</th>
-          <th>Total Installments</th>
-          <th>Installment Period</th>
-          <!-- <th>First Installment</th>
-          <th>Second Installment</th>
-          <th>Third Installment</th>
-          <th>Fourth Installment</th>
-          <th>Fifth Installment</th>
-          <th>Sixth Installment</th>
-          <th>Seventh Installment</th> -->
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let employee of employees">
-          <td>{{ employee.name }}</td>
-          <td>{{ employee.designation }}</td>
-          <!-- <td>{{ employee.joiningDate }}</td> -->
-        <td>{{ employee['installment amount'] }}</td>
-        <td>{{ employee['total installment'] }}</td>
-        <td>{{ employee['installment period'] }}</td>
+<div class="form-container">
+  <h3 *ngIf="!editEmployee">Add New Employee</h3>
+  <h3 *ngIf="editEmployee">Edit Employee</h3>
 
-          <!-- <td>{{ employee.firstInstallment }}</td>
-          <td>{{ employee.secondInstallment }}</td>
-          <td>{{ employee.thirdInstallment }}</td>
-          <td>{{ employee.fourthInstallment }}</td>
-          <td>{{ employee.fifthInstallment }}</td>
-          <td>{{ employee.sixthInstallment }}</td>
-          <td>{{ employee.seventhInstallment }}</td> -->
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <form (submit)="editEmployee ? updateBonus() : addBonus()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="currentEmployee.name" name="name" required />
+
+    <label for="designation">Designation:</label>
+    <input type="text" id="designation" [(ngModel)]="currentEmployee.designation" name="designation" required />
+
+    <label for="installmentAmount">Installment Amount:</label>
+    <input type="number" id="installmentAmount" [(ngModel)]="currentEmployee.installmentAmount" name="installmentAmount" required />
+
+    <label for="totalInstallments">Total Installments:</label>
+    <input type="number" id="totalInstallments" [(ngModel)]="currentEmployee.totalInstallments" name="totalInstallments" required />
+
+    <label for="installmentPeriod">Installment Period:</label>
+    <input type="text" id="installmentPeriod" [(ngModel)]="currentEmployee.installmentPeriod" name="installmentPeriod" required />
+
+    <button type="submit">{{ editEmployee ? 'Update Employee' : 'Add Employee' }}</button>
+    <button type="button" (click)="cancelEdit()" *ngIf="editEmployee">Cancel</button>
+  </form>
+</div>
+
+<div class="table-container">
+  <h2>Employee Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Designation</th>
+        <th>Installment Amount</th>
+        <th>Total Installments</th>
+        <th>Installment Period</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.designation }}</td>
+        <td>{{ employee.installmentAmount }}</td>
+        <td>{{ employee.totalInstallments }}</td>
+        <td>{{ employee.installmentPeriod }}</td>
+        <td>
+          <button (click)="edit(employee)">Edit</button>
+          <button (click)="deleteBonus(employee.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
