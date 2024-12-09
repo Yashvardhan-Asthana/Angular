@@ -1,27 +1,41 @@
 <div class="form-container">
   <h3 *ngIf="!editEmployee">Add New Employee</h3>
   <h3 *ngIf="editEmployee">Edit Employee</h3>
+  <form>
+    <div style="padding-right: 80px; width:230px; margin-left:0%">
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+    </div>
+    <div style="margin-bottom: 1rem;width:230px">
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" />
+    </div>
+    <div style="margin-left: 80px; width:230px">
+      <label for="designation">Joining Date:</label>
+      <input type="text" id="joiningDate" />
+  </div>
+    <div style="padding-right: 80px; width:230px; margin-left:0%">
+        <label for="installmentAmount">Installment Amount:</label>
+        <input type="number" id="installmentAmount" />
+    </div>
+    <div style="margin-bottom: 1rem;width:230px">
+        <label for="totalInstallments">Total Installments:</label>
+        <input type="number" id="totalInstallments" />
+    </div>
+    <div  style="margin-left: 80px; width:230px">
+        <label for="installmentPeriod">Installment Period:</label>
+        <input type="text" id="installmentPeriod" />
+    </div>
 
-  <form (submit)="editEmployee ? updateBonus() : addBonus()">
-    <label for="name">Name:</label>
-    <input type="text" id="name" [(ngModel)]="currentEmployee.name" name="name" required />
+    <div style="width:230px; margin-right:20px">
+      <button type="submit">Add Employee</button>
+    </div>
+    
+   
+</form>
 
-    <label for="designation">Designation:</label>
-    <input type="text" id="designation" [(ngModel)]="currentEmployee.designation" name="designation" required />
-
-    <label for="installmentAmount">Installment Amount:</label>
-    <input type="number" id="installmentAmount" [(ngModel)]="currentEmployee.installmentAmount" name="installmentAmount" required />
-
-    <label for="totalInstallments">Total Installments:</label>
-    <input type="number" id="totalInstallments" [(ngModel)]="currentEmployee.totalInstallments" name="totalInstallments" required />
-
-    <label for="installmentPeriod">Installment Period:</label>
-    <input type="text" id="installmentPeriod" [(ngModel)]="currentEmployee.installmentPeriod" name="installmentPeriod" required />
-
-    <button type="submit">{{ editEmployee ? 'Update Employee' : 'Add Employee' }}</button>
-    <button type="button" (click)="cancelEdit()" *ngIf="editEmployee">Cancel</button>
-  </form>
 </div>
+
 
 <div class="table-container">
   <h2>Employee Table</h2>

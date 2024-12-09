@@ -1,25 +1,77 @@
+body {
+  color: chocolate;
+}
+
 .table-container {
-    margin: 20px;
-  }
-  body{
-    color:chocolate
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table th, table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  table th {
-    background-color :bisque;
-  }
-  
-  table tr:nth-child(even) {
-    background-color:cadetblue;
-  }
-  
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table th {
+  background-color: bisque;
+}
+
+table tr:nth-child(even) {
+  background-color: blanchedalmond;
+}
+
+/* Form Layout */
+form {
+  padding-top: 25px;
+  padding-left: 50px;
+  background-color: beige;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 1rem; /* Spacing between form elements */
+  max-width: 1500px; /* Adjust width for better readability */
+  margin: auto; /* Center the form */
+}
+
+label {
+  font-weight: bold; /* Highlight labels */
+  margin-bottom: 0.5rem;
+ ; /* Labels appear above inputs */
+ /* Each label spans 1 column */
+}
+
+input {
+  padding: 0.5rem; /* Adds padding inside input fields */
+  font-size: 1rem; /* Ensures input text is readable */
+  border: 1px solid #ccc; /* Adds a light border */
+  border-radius: 4px; /* Each input spans 1 column */
+  width: 100%; /* Ensures inputs fit within their grid column */
+}
+
+/* Button Layout */
+.buttons {/* Buttons span all columns */
+  text-align: center; /* Center-align buttons */
+}
+
+button {
+  margin: 0.5rem; /* Adds spacing between buttons */
+  padding: 0.5rem 1rem; /* Makes buttons larger and easier to click */
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50; /* Green background for submit */
+  color: white;
+}
+
+button[type="button"] {
+  background-color: #f44336; /* Red background for cancel */
+  color: white;
+}
